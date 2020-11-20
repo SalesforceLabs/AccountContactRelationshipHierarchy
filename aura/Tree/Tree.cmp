@@ -1,0 +1,31 @@
+<aura:component controller="ContactHierarchyCnt" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contacts" type="AccountContactRelation[]"/>
+    <aura:attribute name="account" type="Account"/>
+    <aura:attribute name="accountId" type="String"/>
+    <aura:attribute name="zoomLevel" type="Integer" default="100"/>
+    
+    <div id='zoomBtns'>
+        <lightning:buttonIcon iconName="utility:zoomout" variant="border-filled" onclick="{!c.zoomOut}" alternativeText="Zoom Out" />
+        <lightning:input aura:id="shabba" type="range" name="number" min="50" max="100" step="5" value="100" variant="label-hidden" onchange="{!c.handleZoom}"/>
+        <lightning:buttonIcon iconName="utility:zoomin" variant="border-filled" onclick="{!c.zoomIn}" alternativeText="Zoom In" /> 
+    </div>
+    <div aura:id="mainPatt" class="tree">
+        <lightning:spinner variant="brand" aura:id="mySpinner" size="large"/>
+        <div id="theAccount">
+            <lightning:icon iconName="standard:account" size="large"/>
+            <h1 class="accName"><a onclick="{!c.navigateToAccount}">{!v.account.Name}</a></h1> 
+        </div>
+        <ul>
+            <aura:iteration items="{!v.contacts}" var="cont">
+                <aura:if isTrue="{!or(cont.Contact.ReportsToId == null, cont.IsDirect == false)}">
+                    <li>
+                        <c:ContactCard contact="{!cont}" contacts="{!v.contacts}"/>
+                    </li>
+                </aura:if>
+            </aura:iteration>
+        </ul>
+    </div>
+    
+</aura:component>

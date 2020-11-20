@@ -1,0 +1,73 @@
+.THIS #card {
+    width: 270px;
+}
+
+.THIS .conName {
+    white-space: initial;
+}
+
+.THIS .box2 {
+    display: inline-block;
+    float: left;
+}
+
+.THIS #profileImg {
+    width: 30%;
+}
+
+.THIS #details {
+    padding: 2% 1%;
+    width: 70%;
+}
+
+.THIS.aLink {
+    border: 1px solid #ccc;
+    padding: .5em .75em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    color: #333;
+    position: relative;
+    top: 1px;
+    background-color: #F4F6F9;
+    min-height: 120px;
+}
+
+.THIS.aLink:hover, .THIS a:hover+ul li .aLink {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow .2s ease-in-out;
+    transition: box-shadow .2s ease-in-out;
+}
+
+.THIS.aLink:hover + ul li::after, 
+.THIS.aLink:hover + ul li::before, 
+.THIS.aLink:hover + ul::before, 
+.THIS.aLink:hover + ul ul::before{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow .2s ease-in-out;
+    transition: box-shadow .2s ease-in-out;
+}
+
+.THIS.bLink {
+    border: 1px solid #ccc;
+    padding: .8em .75em;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    color: #333;
+    position: relative;
+    top: 1px;
+    background-color: #fff9e3;
+    min-height: 120px;
+}
+
+.THIS .textCut {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 18px;
+}
+
+.THIS .headShot {
+    height: auto;
+    width: 100%;
+}

@@ -1,0 +1,95 @@
+.THIS#zoomBtns {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: inline-flex;
+}
+
+.THIS ul {
+    position: relative;
+    padding: 2em 0; 
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+.THIS ul:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+.THIS li {
+    display: inline-block; 
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 2em .5em 0 .5em;
+}
+.THIS li:before, .THIS li:after {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; 
+    height: 2em;
+}
+.THIS li:after {
+    right: auto; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+.THIS li:only-child:after, .THIS li:only-child::before {
+    display: none;
+}
+
+.THIS li:only-child {
+    padding-top: 0;
+}
+.THIS li:first-child::before,  .THIS li:last-child::after {
+    border: 0 none;
+}
+.THIS li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.THIS li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+
+.THIS ul::before{
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; 
+    height: 2em;
+}
+
+
+.THIS .hideTheKids {
+    display: none !important;
+}
+
+.THIS #theAccount {
+    width: 100%;
+    max-width: 325px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: .5em .75em;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #f4f6f9;
+    text-align: center;
+}
+
+.THIS .halfSize {
+    width:50%;
+}
+
+.THIS .accName {
+    font-size: 18px;
+}

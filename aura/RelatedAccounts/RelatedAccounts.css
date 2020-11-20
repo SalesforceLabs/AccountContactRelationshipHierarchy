@@ -1,0 +1,12 @@
+.THIS.cLink {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: .5em .75em;
+    border-radius: 5px;
+    background-color: #FFF9E3;
+    text-align: left;
+}
+
+.THIS .accLabel {
+    width: 50%;
+}

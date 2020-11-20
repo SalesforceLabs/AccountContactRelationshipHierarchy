@@ -1,0 +1,55 @@
+<aura:component access="global">
+    
+    <aura:attribute name="contact" type="AccountContactRelation"/>  
+    <aura:attribute name="contacts" type="AccountContactRelation[]"/>  
+    
+    <aura:if isTrue="{!v.contact.IsDirect}">
+        <div class='aLink'>
+            <div id="card">
+                <div class="slds-grid">
+                    <div id="profileImg" class='box2'>
+                        <img class="headShot" src="{!v.contact.Contact.PhotoUrl}"/>
+                    </div>
+                    <div id="details" class='box2'>
+                        <div class="slds-text-heading_small conName textCut"><a onclick="{!c.openContact}">{!v.contact.Contact.Name}</a></div>
+                        <div class="slds-text-title textCut">{!v.contact.Contact.Title}</div>
+                        <div class="textCut">{!v.contact.Contact.Email}</div>
+                        <div class="textCut">{!v.contact.Contact.Phone}</div>
+                    </div>
+                </div>
+                <div class="butt">
+                    <lightning:buttonIcon onclick="{!c.hideChildren}" class="switchBtn" iconName="utility:switch" size="xx-small" variant="border-filled" alternativeText="Switch" iconClass="dark"/>
+                </div>
+            </div>
+            
+        </div>
+        <div aura:id="contactChildren">
+            <c:ChildrenLayer contact="{!v.contact}" contacts="{!v.contacts}"/> 
+        </div>
+        <aura:set attribute="else">
+            <div class='bLink'>
+                <div id="card">
+                    <div class="slds-grid">
+                        <div id="profileImg" class='box2'>
+                            <img class="headShot" src="{!v.contact.Contact.PhotoUrl}"/>
+                        </div>
+                        <div id="details" class='box2'>
+                            <div class="slds-text-heading_small conName"><a onclick="{!c.openContact}">{!v.contact.Contact.Name}</a></div>
+                            <div class="slds-text-title">{!v.contact.Contact.Title}</div>
+                            <div class="textCut">{!v.contact.Contact.Email}</div>
+                            <div class="textCut">{!v.contact.Contact.Phone}</div>
+                        </div>
+                    </div>
+                    <div class="butt">
+                        <lightning:buttonIcon onclick="{!c.hideChildren}" class="switchBtn" iconName="utility:switch" size="xx-small" variant="border-filled" alternativeText="Switch" iconClass="dark"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div aura:id="contactChildren">
+                <c:ChildrenLayer contact="{!v.contact}" contacts="{!v.contacts}"/> 
+            </div>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

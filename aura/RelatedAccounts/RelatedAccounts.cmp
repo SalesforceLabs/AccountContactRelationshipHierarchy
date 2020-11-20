@@ -1,0 +1,11 @@
+<aura:component access="global">
+    
+    <aura:attribute name="accounts" type="AccountContactRelation[]"/>
+    
+    <div class='cLink'>
+        <aura:iteration items="{!v.accounts}" var="acc">
+            <c:AccountCard account="{!acc}"/>
+        </aura:iteration>
+    </div>
+    
+</aura:component>

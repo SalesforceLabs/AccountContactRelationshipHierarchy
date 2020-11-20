@@ -1,0 +1,26 @@
+<aura:component access="global">
+    
+    <aura:attribute name="account" type="AccountContactRelation"/>
+    
+    <article class="slds-tile slds-media accountTile">
+        <div class="slds-media__figure">
+            <span class="slds-icon_container" title="description of icon when needed">
+                <lightning:icon iconName="standard:account" size="medium" alternativeText="Indicates approval"/>
+            </span>
+        </div>
+        <div class="slds-media__body">
+            <h3 class="slds-truncate" title="Salesforce UX"><a onclick="{!c.openAccount}">{!v.account.Account.Name}</a></h3>
+            <div class="slds-tile__detail slds-text-body_small">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate accLabel" title="First Label">Account Owner:</dt>
+                    <dd class="slds-item_detail slds-truncate accLabel" title="Description for first label">{!v.account.Account.Owner.Name}</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate accLabel" title="Second Label">Direct Contact:</dt>
+                    <dd class="slds-item_detail slds-truncate accLabel" title="Description for second label">
+                        <ui:inputCheckbox class="checkboxColour" value="{!v.account.IsDirect}" disabled="true"/>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </article>
+    
+</aura:component>
